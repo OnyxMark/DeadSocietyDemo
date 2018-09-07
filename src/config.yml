@@ -1,0 +1,376 @@
+##############################################################
+# +--------------------------------------------------------+ #
+# |                         Notes                          | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# If you receive an error when DeadSociety loads config, ensure that:
+#   - No tabs are present: YAML only allows spaces
+#   - Indents are correct: YAML hierarchy is based entirely on indentation
+#   - You have a wrong Material | Entity name. Make sure you have the correct one before posting or trying to seek for help.
+
+# If you are having issues with Rewards & ItemShop Signs, ensure that:
+#   - You dont have Vault API and an Economy plugin to hook into it.
+#   - You have an Economy plugin that is not hooked into Vault API.
+
+# If you encounter any problems, you can always join our discord channel: https://discordapp.com/invite/8TpkzuR
+
+# Make sure to reload the plugin after saving the changes by doing: /DeadSocietyReload | /DsReload
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                        WARNING                         | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# Do not use /reload command because it may cause issues when using mine or other plugins.
+# If you encounter any issues please use the /stop command to restart your server.
+
+# WARNING: This option must not be changed or removed.
+configuration-version: 1.0
+
+# Set to true if you want to be notified in the game when a new update is released.
+on-game-join-update-check: true
+
+# The worlds you want DeadSociety to be enabled on.
+# WARNING: This option will change only when the server is closed.
+# Please use the /stop command to restart your server.
+enabled-worlds:
+- world
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                 DeadSociety - General                  | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# The default name of the item shop signs. Colours are not available.
+# If you encounter any issues, make sure all your item shop signs have this name as default.
+set-item-sign-shop-name: "[Items]"
+
+# The damage when a player is on a barbed wire(Web).
+# 4 = 2 Hearts every 2 seconds. That means, 1 = Half Heart.
+barbed-wire-damage: 4
+
+# Horses will be spawned with a saddle, the saddle cannot be taken or dropped on horses death.
+spawn-custom-horse: true
+
+# Set to false to cancel entities from dropping experience points on their death.
+entities-can-drop-experience-points: false
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                  DeadSociety - Thirst                  | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# Set to true to enable a thirst bossbar system for players.
+# WARNING: This option will change only when the server is closed.
+# Please use the /stop command to restart your server.
+enable-thirst: true
+
+# The title of the players thirst bossbar.
+set-thirst-title: "Your hydration level is: "
+
+# The color of the players thirst bossbar.
+# Bar Colors: BLUE, YELLOW, RED, GREEN, PINK, PURPLE, WHITE
+set-thirst-bar-color: "WHITE"
+
+# Set to true to enable thirst consumption on operators.
+allow-operators-thirst-consumption: false
+
+# The amount of players thirst consumption in seconds.
+# WARNING: This option will change only when the server is closed.
+# Please use the /stop command to restart your server.
+set-thirst-consumption-time: 13
+
+# Set to true to enable thirst warning messages.
+# 'Warning Types:' TITLE, ACTION_BAR, CHAT, NONE.
+# You are able to set as many warnings you want but not less than 15.
+thirst-warning-messages:
+  enable: true
+  type: 'TITLE'
+  50: '&cPlease, Keep an eye on your thirst'
+  40: '&cYou are starting to feel dehydrated!'
+  30: '&cDrink something fast before you die!'
+  20: '&cYou are dying from dehydration'
+
+# Set a value on the items for a thirst renewal while consuming.
+thirst-consuming-items:
+  potion: 100
+  milk_bucket: 80
+  mushroom_soup: 50
+  rabbit_stew: 50
+  beetroot_soup: 50
+  melon: 30
+  raw_fish: 50
+  cooked_fish: 25
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                 DeadSociety - Diseases                 | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# The value of blindness level when infection happens.
+# Available values are: 0-5. Set the value to 0 for no blindness.
+infection-blindness-level: 1
+
+# Cancel commands when someone has an infection but before infection happens(Except if someone has bypass).
+infection-commands-cancellation: true
+
+set-infection-screen-title: "&c> Infected %type% - Find A Cure <"
+
+# Set to true to enable infected water bottles when someone is going to fill an empty bottle to an infected water source.
+enable-infected-water-bottles: true
+
+set-bleeding-screen-title: "&cBleeding - Time Left: %seconds% Seconds"
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                  DeadSociety - Zones                   | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# Enable cooldown when someone is teleporting to a zone location.
+enable-zones-cooldown-teleportation: true
+
+# The amount of the zone teleportation cooldown in seconds.
+zones-teleportation-cooldown: 4
+
+# `enable:` Set to true to enable an entering/leaving radiation zone message.
+
+# `type:` TITLE, ACTION_BAR, CHAT, NONE.
+
+# `message:` The message when a player enters/leaves a radiation zone.
+
+# Make sure you have WorldGuard & WorldEdit [Latest Versions] to hook on the Radiation Zones, otherwise it will not work even if all the options are set to true.
+radiation-zone-entering-message:
+  enable: true
+  type: "TITLE"
+  message: "&cEntering a radiation zone"
+
+radiation-zone-leaving-message:
+  enable: true
+  type: "TITLE"
+  message: "&2Leaving a radiation zone"
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |              DeadSociety - DeathMessages               | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# Set to false to cancel all default death messages.
+default-death-messages: false
+
+# Set to true to enable all custom death messages.
+custom-death-messages: true
+
+# The custom death message when a player is dead by a specific custom death causes.
+# You can get the player who died with %player%.
+death-messages:
+  thirst: "&2%player% &7died from dehydration"
+  infection: "&2%player% &7died by infection"
+  barbed-wire: "&2%player% &7died by a barbed wire"
+  walker: "&2%player% &7died by a walker"
+  radiation: "&2%player% &7died by radiation"
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                 DeadSociety - Walkers                  | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# Allow zombies to drop Walker Guts on their death based on the drop chance(Client-Side).
+walkers-can-drop-guts: true
+
+# Set to false to cancel zombies from breaking wooden doors.
+walkers-can-break-wooden-doors: false
+
+# The amount of zombies attack strength in a double value.
+walkers-default-strength: 5.5
+
+# The amount of zombies default movement speed in a double value.
+walkers-default-movement-speed: 0.2
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                 DeadSociety - Rewards                  | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# `enable:` Set to true to enable a money reward when a player kills another player or a zombie.
+
+# `set-money-reward:` The amount of the money reward in a double value.
+
+# `reward-message - enable:` Set to true to enable a money reward message.
+
+# `reward-message - type:` TITLE, ACTION_BAR, CHAT, NONE.
+
+# `reward-message - message:` The message when a player kills another player or a zombie.
+# %reward% to get the reward amount.
+
+# Make sure you have Vault and an Economy plugin to hook, otherwise it will not work even if you set it to true.
+
+kill-player-money-reward:
+  enable: true
+  set-money-reward: 100
+  reward-message:
+    enable: true
+    type: "ACTION_BAR"
+    message: "&2+%reward%"
+
+kill-walker-money-reward:
+  enable: true
+  set-money-reward: 10
+  reward-message:
+    enable: true
+    type: "ACTION_BAR"
+    message: "&2+%reward%"
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                 DeadSociety - Survival                 | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# `enable:` Enable nausea effect when someone is hungry to death.
+
+# `level:` The level value of nausea effect. Available values are: 1-5.
+hungry-nausea:
+  enable: true
+  level: 3
+
+# `enable:` Enable slowness effect when someone falls from a high place.
+
+# `time` The time of slowness effect in seconds.
+
+# `level:` The level value of slowness effect. Available values are: 1-5.
+fall-slowness:
+  enable: true
+  time: 3
+  level: 2
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                  DeadSociety - Items                   | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# You can always set an item data to any custom item you want.
+# For example, if your item is INK_SACK and you want to get other values of this type
+# the `item-data: <value>` will do that. This is also used to get any Material data/durability such as swords.
+
+custom-items:
+  antibiotics:
+    item-type: GLOWSTONE_DUST
+    item-name: "&4Antibiotics"
+    item-lore: "&7Used to cure yourself of food poisoning|&7and walker bites."
+
+  painkillers:
+    item-type: FIREWORK_CHARGE
+    item-name: "&4Painkillers"
+    item-lore: "&7Provides damage resistance 2 and slowness 1|&7for 20 seconds."
+
+# You are able to set a default sound such as `item-sound: BLOCK_NOTE_PLING-1-1` or a custom sound with `item-custom-sound: custom-sound`
+# `message-type:` TITLE, ACTION_BAR, CHAT, NONE.
+  bandage:
+    item-type: CLAY_BALL
+    item-name: "&4Bandage"
+    item-lore: "&7Tight bandages can be used to slow blood flow to|&7an extremity, such as when a leg or arm is bleeding heavily."
+    item-message-type: ACTION_BAR
+    item-heal: 8
+
+  flashlight:
+    item-type: GOLD_BARDING
+    item-name: "&9Flashlight"
+    item-lore: "&7Right click to turn toggle on and off."
+
+  knife:
+    item-type: IRON_SWORD
+    item-name: "&7Knife"
+    item-lore: "&7Used to skin animals, perform an amputation|&7cut the meat or a rope."
+    item-damage: 8
+    item-self-damage: 4
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                  DeadSociety - Blocks                  | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# `enable:` Set to true to make crafting blocks of your choice to be cancelled from opening.
+
+# If you want some players to open certain crafting blocks that are cancelled(in the list), then you can always give
+# a permission. Example, a DISPENSER. The permission would be ds.open.dispenser
+
+# `blocks:` The blocks name type to be cancelled from opening based on your supported server version.
+cancel-certain-blocks-from-opening:
+  enable: false
+  blocks:
+  - DISPENSER
+  - FURNACE
+  - DROPPER
+  - ANVIL
+  - HOPPER
+  - WORKBENCH
+
+# `enable:` Set to true to make blocks of your choice to be able from breaking.
+
+# If you want some players to break certain blocks that are cancelled(not in the list), then you can always give
+# a permission. Example, a CHEST. The permission would be ds.break.chest
+
+# `blocks:` The blocks name type to be allowed from breaking based on your supported server version.
+
+allow-certain-blocks-from-breaking:
+  enable: false
+  blocks:
+  - WEB
+  - TORCH
+
+# `enable:` Set to true to make blocks of your choice to be allowed from placement.
+
+# If you want some players to place certain blocks that are cancelled(not in the list), then you can always give
+# a permission. Example, a STONE. The permission would be ds.place.stone
+
+# `blocks:` The blocks name type to be allowed from placement based on your supported server version.
+
+allow-certain-blocks-placement:
+  enable: false
+  blocks:
+  - STONE_BUTTON
+  - WOOD_BUTTON
+  - CHEST
+  - TRAPPED_CHEST
+  - TORCH
+  - WEB
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                 DeadSociety - Entities                 | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# `enable:` Set to true to make entities of your choice to be blocked from spawning.
+# If an entity is keep spawning, this is because there is another plugin on your server that causing this.
+
+# `entities:` The entity name to be blocked from spawning based on your server version.
+block-entities:
+  enable: true
+  entities:
+  - CREEPER
+  - WITCH
+  - ENDERMAN
+  - SLIME
+  - SKELETON
+  - SPIDER
+  - SILVERFISH
+  - GUARDIAN
+  - VILLAGER
+  - CHICKEN
+  - RABBIT
+  - OCELOT
+  - WOLF
+  - PIG
+  - SQUID

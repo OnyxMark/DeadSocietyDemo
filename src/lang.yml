@@ -1,0 +1,76 @@
+##############################################################
+# +--------------------------------------------------------+ #
+# |                        WARNING                         | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+# This option must not be changed or removed.
+configuration-version: 1.0
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                     TIME MESSAGES                      | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+time-and: "and"
+time-minute: "minute"
+time-minutes: "minutes"
+time-second: "second"
+time-seconds: "seconds"
+
+##############################################################
+# +--------------------------------------------------------+ #
+# |                        MESSAGES                        | #
+# +--------------------------------------------------------+ #
+##############################################################
+
+no-permission: "&cYou do not have permission to do that."
+not-enough-money: "&cNot enough money to afford it."
+player-not-found: "Player not found online."
+player-command: "&cThis command is only available to players."
+wrong-usage: "Wrong usage."
+already-exists: "&calready exists."
+no-selection: "&cCould not find any selection."
+args-warning: "&cYou can't add more than 15 arguments."
+available-items: "Available Items:"
+invalid-camp-location: "&cInvalid camp location."
+camp-set: "&6Camp set to current location."
+specify-player: "Specify a player."
+specify-item: "Specify an item type."
+specify-amount: "Specify an amount."
+not-valid-item: "&cInvalid item."
+not-valid-amount: "&cInvalid amount."
+not-enough-space: "&cNot enough space."
+thirst: "&6Thirst:"
+thirst-not-available: "&cThirst is not enabled."
+thirst-refilled: "&6Your thirst has been set back to 100%"
+thirst-refilled-others: "&6You set %player% thirst back to 100%"
+tracking: "&7Now tracking:"
+invalid-zone-location: "&cInvalid spawn location."
+zone-max: "&cYou can't create more than 30 zones."
+specify-zone: "Specify a zone name."
+specify-zone-type: "Specify a zone type."
+zone-created: "&2has been created."
+zone-removed: "&chas been removed."
+zone-not-exist: "&cZone does not exist."
+available-zones: "Available Zones:"
+no-available-zones: "There aren't any available zones."
+gave: "&7You successfuly gave"
+teleporting: "&6Teleporting..."
+teleporting-cooldown: "&6Teleporting in a few seconds."
+infected-water-bottle: "Infected Water Bottle"
+infected-water-bottle-effects: "&cInfection II"
+infection-logout: "&cYou were bitten last time before you Log Out. Unfortunately you died by infection."
+dying-from-infection: "&cYou can't do that while you are dying from infection."
+infected-leg: "&cYou have been bitten in the leg. Find a knife to perform amputation before you die from infection."
+infected-neck: "&cYou have been bitten badly in the neck! You have to find a cure and use it before you die from infection."
+not-infected: "&cYou are not infected to use that."
+antibiotics-warning: "&cYou can't use an antibiotic for your infection type."
+antibiotics-cure: "&6You successfully cured yourself by using antibiotics."
+knife-not-enough-health: "&cYou don't have enough health to perform an amputation."
+knife-cure: "&cYou cured yourself by performing an amputation on your leg. Unfortunately, you are now bleeding and you need to find a splint to heal yourself before it's too late."
+bought: "&7You bought &c%amount% %item% &7for &e%price%$"
+track-compass-title: "&3Track"
+backpack-title: "&3Backpack"
+bandage-bleeding-heal: "&2You used a bandage to heal your leg from the amputation bleeding."

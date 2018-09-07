@@ -1,0 +1,25 @@
+name: DeadSocietyDemo
+version: 1.0
+description: This plugin enhances your gaming experience and provides you with a unique survival mode that will test your limits.
+main: me.nosmastew.deadsociety.DeadSociety
+softdepend: [Vault, WorldEdit, WorldGuard]
+commands:
+    deadsociety:
+      aliases: [ds]
+
+    items:
+      description: Gives or shows the list of all the available items.
+
+    zones:
+      description: Shows all available commands based on the zones.
+      aliases: [zone]
+
+    backpack:
+      description: Open your personal backpack.
+      aliases: [bp]
+
+    thirst:
+      description: Shows your current thirst.
+
+    setcamp:
+      description: Sets your camp location.
