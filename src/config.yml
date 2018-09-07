@@ -29,9 +29,6 @@
 # WARNING: This option must not be changed or removed.
 configuration-version: 1.0
 
-# Set to true if you want to be notified in the game when a new update is released.
-on-game-join-update-check: true
-
 # The worlds you want DeadSociety to be enabled on.
 # WARNING: This option will change only when the server is closed.
 # Please use the /stop command to restart your server.
